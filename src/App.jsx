@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const App = () => {
   const [data,setData]=useState("");
+  const [info,setInfo]=useState("");
   const getData=(e)=>{
     setData(e.target.value)
   }
@@ -9,7 +10,7 @@ const App = () => {
   fetch(`https://api.unsplash.com/search/photos/?client_id=FdldoVW5XaneXYyrGzrVfFvJTaKcHHs2hlAryb5q2po&query=${data}`)
   .then(res => res.json())
   .then(data => {
-    console.log(data.results)
+    setInfo(data.results)
 
   })
  }
@@ -23,7 +24,11 @@ const App = () => {
       <button onClick={fetchImage}>ارسال</button>
     </div>
     <div className="gallery">
-      <img src="" alt="" />
+      {
+        info && info.map((item)=>
+        <img key={item.id} src={item.urls.regular} alt="" />
+        )
+      }
     </div>
     </>
   );
