@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  direction: rtl;
+  font-family: "vazir" !important;
+}
+.header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 300px;
+  box-shadow: 0 0 10px rgb(137, 135, 135);
+
+}
+.header input{
+  width: 500px;
+  padding: 10px;
+  border: 1px solid rgb(220, 217, 217);
+
+}
+.header button{
+  width: 150px;
+  background: crimson;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+.gallery{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gallery img{
+  width: 25%;
+  height: 400px;
+  object-fit: cover;
+}
