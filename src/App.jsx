@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 
 const App = () => {
   const [data,setData]=useState("");
+  //FdldoVW5XaneXYyrGzrVfFvJTaKcHHs2hlAryb5q2po
   const getData=(e)=>{
     setData(e.target.value)
   }
- 
-    console.log(data)
+ const fetchImage=()=>{
+  fetch("https://api.unsplash.com/search/photos/?client_id=FdldoVW5XaneXYyrGzrVfFvJTaKcHHs2hlAryb5q2po")
+ }
 
 
   return (
