@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 
 const App = () => {
   const [data,setData]=useState("");
-  const [info,setInfo]=useState("");
+  const [result,setResult]=useState("");
   const getData=(e)=>{
     setData(e.target.value)
   }
  const fetchImage=()=>{
   fetch(`https://api.unsplash.com/search/photos/?client_id=FdldoVW5XaneXYyrGzrVfFvJTaKcHHs2hlAryb5q2po&query=${data}`)
   .then(res => res.json())
-  .then(data => {
-    setInfo(data.results)
+  .then(info => {
+    setResult(info.results)
 
   })
  }
@@ -25,7 +25,7 @@ const App = () => {
     </div>
     <div className="gallery">
       {
-        info && info.map((item)=>
+        result && result.map((item)=>
         <img key={item.id} src={item.urls.regular} alt="" />
         )
       }
